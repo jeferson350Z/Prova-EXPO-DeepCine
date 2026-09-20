@@ -13,3 +13,6 @@ const styles = StyleSheet.create({
   tela: { flex: 1, alignItems: "center", justifyContent: "center", backgroundColor: cores.fundo },
   texto: { color: cores.texto, fontSize: 24 },
 });
+
+
+ 
