@@ -29,6 +29,16 @@ export default function Inicio() {
             </Pressable>
           ))}
         </ScrollView>
+
+        <View style={styles.banner}>
+          <Text style={styles.bannerTitulo}>ATRAÍDOS{"\n"}PELO DESTINO</Text>
+          <View style={styles.pontos}>
+            <View style={[styles.ponto, styles.pontoAtivo]} />
+            <View style={styles.ponto} />
+            <View style={styles.ponto} />
+            <View style={styles.ponto} />
+          </View>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -51,4 +61,15 @@ const styles = StyleSheet.create({
   abas: { marginTop: 16, paddingLeft: 16 },
   aba: { color: cores.textoSuave, fontSize: 20, marginRight: 28 },
   abaAtiva: { color: cores.texto, fontWeight: "700" },
+  banner: {
+    height: 200,
+    marginTop: 16,
+    backgroundColor: "#4A4033",
+    justifyContent: "center",
+    paddingHorizontal: 20,
+  },
+  bannerTitulo: { color: cores.ouro, fontSize: 30, fontWeight: "800", letterSpacing: 2 },
+  pontos: { position: "absolute", right: 12, bottom: 10, flexDirection: "row", gap: 6 },
+  ponto: { width: 8, height: 8, borderRadius: 2, backgroundColor: "#D0D0D0" },
+  pontoAtivo: { width: 18, backgroundColor: cores.destaque },
 });
