@@ -110,3 +110,11 @@ export const catalogo: Titulo[] = [
     cor: "#8C1C1C",
   },
 ];
+export const plataformas = [
+  { id: "netflix", nome: "NETFLIX", fundo: "#000000", texto: "#E50914" },
+  { id: "disney", nome: "Disney+", fundo: "#0B1E5B", texto: "#FFFFFF" },
+  { id: "globoplay", nome: "globoplay", fundo: "#F2542D", texto: "#FFFFFF" },
+  { id: "prime", nome: "prime video", fundo: "#00A8E1", texto: "#FFFFFF" },
+];
+
+export const generos = ["Ação", "Comédia", "Romance", "Terror", "Ficção", "Drama", "Suspense"];
