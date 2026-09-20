@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from "react-native";
-import { cores } from "../../theme/cores";
+import { cores } from "../theme/cores";
 
 export default function Busca() {
   return (
