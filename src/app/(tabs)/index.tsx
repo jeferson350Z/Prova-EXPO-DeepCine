@@ -1,14 +1,26 @@
 import { useState } from "react";
-import { Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
+import { FlatList, Pressable, ScrollView, StyleSheet, Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { Ionicons } from "@expo/vector-icons";
 import { router } from "expo-router";
+import { CartazCard } from "../../components/CartazCard";
+import { TituloSecao } from "../../components/TituloSecao";
+import { catalogo, plataformas } from "../../data/catalogo";
 import { cores } from "../../theme/cores";
 
 const abas = ["Início", "Séries", "Filmes", "Animes", "Novelas"];
+const tipoPorAba: Record<string, string> = {
+  Séries: "Série",
+  Filmes: "Filme",
+  Animes: "Anime",
+  Novelas: "Novela",
+};
 
 export default function Inicio() {
   const [abaAtiva, setAbaAtiva] = useState("Início");
+
+  const lista =
+    abaAtiva === "Início" ? catalogo : catalogo.filter((t) => t.tipo === tipoPorAba[abaAtiva]);
 
   return (
     <SafeAreaView style={styles.tela} edges={["top"]}>
@@ -39,6 +51,32 @@ export default function Inicio() {
             <View style={styles.ponto} />
           </View>
         </View>
+
+        <TituloSecao texto="Streaming" />
+        <FlatList
+          horizontal
+          data={plataformas}
+          keyExtractor={(p) => p.id}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.listaHorizontal}
+          renderItem={({ item }) => (
+            <View style={[styles.plataforma, { backgroundColor: item.fundo }]}>
+              <Text style={[styles.plataformaNome, { color: item.texto }]}>{item.nome}</Text>
+            </View>
+          )}
+        />
+
+        <TituloSecao texto="Novidades Mais Populares" />
+        <FlatList
+          horizontal
+          data={lista}
+          keyExtractor={(t) => t.id}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={styles.listaHorizontal}
+          renderItem={({ item }) => <CartazCard item={item} />}
+          ListEmptyComponent={<Text style={styles.vazio}>Nada por aqui ainda.</Text>}
+        />
+        <View style={{ height: 24 }} />
       </ScrollView>
     </SafeAreaView>
   );
@@ -72,4 +110,8 @@ const styles = StyleSheet.create({
   pontos: { position: "absolute", right: 12, bottom: 10, flexDirection: "row", gap: 6 },
   ponto: { width: 8, height: 8, borderRadius: 2, backgroundColor: "#D0D0D0" },
   pontoAtivo: { width: 18, backgroundColor: cores.destaque },
+  listaHorizontal: { paddingHorizontal: 16, gap: 12 },
+  plataforma: { width: 220, height: 120, borderRadius: 8, alignItems: "center", justifyContent: "center" },
+  plataformaNome: { fontSize: 28, fontWeight: "800" },
+  vazio: { color: cores.textoSuave },
 });
