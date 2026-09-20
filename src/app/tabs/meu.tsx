@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from "react-native";
 import { cores } from "../../theme/cores";
 
-export default function Inicio() {
+export default function Meu() {
   return (
     <View style={styles.tela}>
-      <Text style={styles.texto}>olaaaaa</Text>
+      <Text style={styles.texto}>Meu Perfil</Text>
     </View>
   );
 }
