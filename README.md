@@ -1,56 +1,53 @@
-# Welcome to your Expo app 👋
+# DeepCine
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Aplicativo mobile para explorar filmes, séries, animes e novelas em um só lugar.
 
-## Get started
+## Sobre o projeto
 
-1. Install dependencies
+O DepCine é uma interface de catálogo de entretenimento, com foco em uma experiência visual simples e moderna. O app permite navegar por títulos, filtrar por categoria e buscar por nome.
 
-   ```bash
-   npm install
-   ```
+## Funcionalidades
 
-2. Start the app
+- Tela inicial com destaques e categorias
+- Busca por títulos
+- Navegação por abas: Início, Séries, Filmes, Animes e Novelas
+- Cards de catálogo com informações principais
+- Listagem de plataformas de streaming
+- Layout visual pensado para app de entretenimento
 
-   ```bash
-   npx expo start
-   ```
+## Tecnologias
 
-In the output, you'll find options to open the app in a
+- React Native
+- Expo
+- Expo Router
+- TypeScript
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Como rodar o projeto
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+1. Instale as dependências:
 
 ```bash
-npm run reset-project
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Inicie o app:
 
-### Other setup steps
+```bash
+npx expo start
+```
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+3. Abra no emulador, simulador ou no Expo Go.
 
-## Learn more
+## Estrutura do projeto
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+src/
+  app/
+  components/
+  data/
+  theme/
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Observação
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Este projeto foi desenvolvido como uma aplicação de demonstração para catálogo de filmes e series, com foco em visual e navegação mobile.
